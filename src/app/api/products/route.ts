@@ -1,6 +1,6 @@
 // pages/api/products/route.ts
 
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { Product } from '../../../types/product'; // Adjust the import path as needed
 
 
@@ -30,7 +30,7 @@ export async function GET() {
 }
 
 // API route for fetching a single product by ID
-export async function GET_PRODUCT(request: Request, { params }: { params: { id: string } }) {
+export async function GET_PRODUCT(req: NextRequest, { params }: { params: { id: string } }) {
   const { id } = params;
   const productId = parseInt(id, 10);
 
