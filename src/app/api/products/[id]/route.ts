@@ -1,10 +1,24 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { productsData } from '../../../data/products'; // Static data (Ya aap API ya database se fetch kar sakte hain)
+import { productsData } from '../../../data/products'; // Static data
 
-export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest) {
+  // Extracting ID from URL
+  const { pathname } = req.nextUrl;
+  const idString = pathname.split('/').pop();  // Extract ID from URL
+
+  if (!idString) {
+    return NextResponse.json({ message: 'ID not provided in the URL' }, { status: 400 });  // Handle case where ID is missing
+  }
+
+  // Parse the ID and ensure it's a valid number
+  const id = parseInt(idString, 10);
+
+  if (isNaN(id)) {
+    return NextResponse.json({ message: 'Invalid ID format' }, { status: 400 });  // Handle invalid ID format
+  }
+
   try {
-    const { id } = params;  // Dynamic ID from the URL
-    const product = productsData.find((p) => p.id === parseInt(id));  // Find product by ID
+    const product = productsData.find((p) => p.id === id);  // Find product by ID
 
     if (!product) {
       return NextResponse.json({ message: 'Product not found' }, { status: 404 });  // Return error if not found
