@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { productsData } from '../../../data/products'; // Static data (Ya aap API ya database se fetch kar sakte hain)
 
-export async function GET(request: Request, { params }: { params: { id: string } }) {
+export async function GET(req: NextRequest, { params }: { params: { id: string } }) {
   try {
     const { id } = params;  // Dynamic ID from the URL
     const product = productsData.find((p) => p.id === parseInt(id));  // Find product by ID
