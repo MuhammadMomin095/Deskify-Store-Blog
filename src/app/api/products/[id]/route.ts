@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { productsData } from '../../../data/products'; // Static data
 
 export async function GET(req: NextRequest) {
-  // Extracting ID from URL
+  // Extracting ID from URL (if needed)
   const { pathname } = req.nextUrl;
   const idString = pathname.split('/').pop();  // Extract ID from URL
 
