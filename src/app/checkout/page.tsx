@@ -1,18 +1,25 @@
-'use client';
-
-import { useSearchParams } from 'next/navigation'; 
+'use client'; 
+import { useSearchParams } from 'next/navigation';
 import { useState, useEffect } from 'react';
+import { Suspense } from 'react';
 
 const Checkout = () => {
-  const searchParams = useSearchParams(); 
+  const searchParams = useSearchParams();
   const [cartItems, setCartItems] = useState<any[]>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
   useEffect(() => {
-    if (searchParams.get('cartItems')) {
-      const items = JSON.parse(searchParams.get('cartItems') as string);
-      setCartItems(items);
-      setTotalPrice(parseFloat(searchParams.get('totalPrice') as string));
+    const cartItemsParam = searchParams.get('cartItems');
+    const totalPriceParam = searchParams.get('totalPrice');
+    
+    if (cartItemsParam && totalPriceParam) {
+      try {
+        const items = JSON.parse(cartItemsParam);
+        setCartItems(items);
+        setTotalPrice(parseFloat(totalPriceParam));
+      } catch (error) {
+        console.error("Error parsing query parameters:", error);
+      }
     }
   }, [searchParams]);
 
@@ -66,7 +73,13 @@ const Checkout = () => {
         <button type="submit">Place Order</button>
       </form>
     </div>
-  )
+  );
 };
 
-export default Checkout;
+export default function CheckoutPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Checkout />
+    </Suspense>
+  );
+}
