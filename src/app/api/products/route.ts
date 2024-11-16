@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
-import { Product } from '../../../types/product'; // Adjust the import path as needed
+import { Product } from '../../../types/product'; 
 
-// Sample product data with image URLs
 // Products array (should only be declared once)
 const products = [
   { id: 1, name: 'Rustic Executive Desk', description: 'A beautiful executive desk', price: '$100', image: '/images/3.jpg' },
@@ -27,17 +26,4 @@ const products = [
 export async function GET() {
   return NextResponse.json(products);
 }
-/*
-// API route for fetching a single product by ID
-export async function GET_PRODUCT(request: Request, { params }: { params: { id: string } }) {
-  const { id } = params;
-  const productId = parseInt(id, 10);
-
-  const product = products.find((product) => product.id === productId);
-
-  if (!product) {
-    return NextResponse.json({ message: 'Product not found' }, { status: 404 });
-  }
-
-  return NextResponse.json(product);
-}  */
+ 
