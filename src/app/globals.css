@@ -1,8 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-
 /* Global Styles */
 body {
   margin: 0;
@@ -11,9 +9,6 @@ body {
   color: #333;
   position: absolute;
 }
-
-
-
 
 /* Main Navbar Styling */
 nav {
@@ -95,11 +90,6 @@ nav ul li a:hover {
   }
 }
 
-
-
-
-
-
 /* Hero Section */
 .hero {
   background: linear-gradient(to right, #F3F4F6, #E5E7EB);
@@ -122,11 +112,6 @@ nav ul li a:hover {
   color: #333;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
-
 
 /* Image Hover Animation */
 .image-container img {
@@ -175,11 +160,6 @@ nav ul li a:hover {
   }
 }
 
-
-
-
-
-
 /* About Section */
 .about {
   padding: 4rem 2rem;
@@ -213,11 +193,6 @@ nav ul li a:hover {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-
-
-
-
-
 /* Global Styles for Cards Section */
 .cards {
   background: linear-gradient(to right, #E5E7EB, #F3F4F6);
@@ -245,11 +220,6 @@ nav ul li a:hover {
 .cards p {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
-
 
 /* Card Styling */
 .card {
@@ -329,11 +299,6 @@ nav ul li a:hover {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-
-
-
-
-
 /* Comments Section */
 .comments {
   padding: 4rem 2rem;
@@ -358,11 +323,6 @@ nav ul li a:hover {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 
-
-
-
-
-
 /* Contact Section */
 .contact {
   padding: 4rem 2rem;
@@ -377,11 +337,6 @@ nav ul li a:hover {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   animation: shake 3s ease-in-out infinite;
 }
-
-
-
-
-
 
 /* Cart Section */
 .cart-container {
@@ -551,12 +506,6 @@ nav ul li a:hover {
   }
 }
 
-
-
-
-
-
-
 /* Blogss Section */
 .blogs {
   padding: 4rem 2rem;
@@ -578,11 +527,6 @@ nav ul li a:hover {
 .blogs h2 {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
-
-
-
-
-
 
 /* Products Section */
 .products {
@@ -688,10 +632,6 @@ nav ul li a:hover {
     font-size: 0.875rem; /* Adjust price text size */
   }
 }
-
-
-
-
 
 /* Checkout Container */
 .checkout-container {
@@ -816,12 +756,6 @@ button[type="submit"]:hover {
   }
 }
 
-
-
-
-
-
-
 /* carts Section */
 .carts {
   padding: 4rem 2rem;
@@ -842,11 +776,6 @@ button[type="submit"]:hover {
 .carts a {
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-
-
-
-
 
 /* collage image Section */
 .collage-grid {
@@ -911,11 +840,6 @@ button[type="submit"]:hover {
   grid-row: span 1;
 }
 
-
-
-
-
-
 /* Footer Styles */
 footer {
   background-color: #2D2E32;
@@ -971,11 +895,6 @@ footer .copyright {
   margin-top: 1rem;
 }
 
-
-
-
-
-
 /* Animation for subtle shake effect */
 @keyframes shake {
   0% {
@@ -995,8 +914,6 @@ footer .copyright {
   }
 }
 
-
-
 /* Additional section specific styles */
 @keyframes fadeInUpCard {
   0% {
@@ -1008,9 +925,6 @@ footer .copyright {
     transform: translateY(0);
   }
 }
-
-
-
 
 /* Animation for subtle wave effect */
 @keyframes textWave {
@@ -1031,9 +945,6 @@ footer .copyright {
   }
 }
 
-
-
-
 /* Animation for subtle pulse effect */
 @keyframes pulse {
   0% {
@@ -1047,8 +958,6 @@ footer .copyright {
   }
 }
 
-
-
 /* Global CSS */
 @keyframes fadeInDown {
   0% {
@@ -1060,9 +969,6 @@ footer .copyright {
     transform: translateY(0);
   }
 }
-
-
-
 
 /* Animation for subtle fadeInUp effect */
 @keyframes fadeInUp {
@@ -1076,9 +982,6 @@ footer .copyright {
   }
 }
 
-
-
-
 /* Animation for subtle letterAnimation effect */
 @keyframes letterAnimation {
   0% {
@@ -1091,9 +994,6 @@ footer .copyright {
   }
 }
 
-
-
-
 /* Animation for subtle spinner effect */
 .spinner {
   border: 4px solid #f3f3f3;
@@ -1104,16 +1004,10 @@ footer .copyright {
   animation: spin 1s linear infinite;
 }
 
-
-
-
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-
-
 
 /* Add custom delay for each letter */
 .letter {
@@ -1125,9 +1019,6 @@ footer .copyright {
   animation-duration: 0.5s;
   animation-timing-function: ease-in-out;
 }
-
-
-
 
 /* Responsiveness */
 @media screen and (max-width: 768px) {
