@@ -12,7 +12,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 absolute py-12 px-4 z-50 top-0 left-0 right-0 shadow-md transition-transform duration-500 ease-in-out hover:scale-105">
+    <nav className="w-full bg-gradient-to-r from-[#695441] via-[#C1AA90] to-[#695441] absolute px-4 z-50 top-0 left-0 right-0 ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Section: Logo and Name */}
         <div className="flex items-center space-x-10">
@@ -23,7 +23,7 @@ const Navbar = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <h1 className="text-6xl font-bold text-white animate-pulse transition-all duration-500" style={{ textShadow: '5px 5px 10px rgba(0, 0, 0, 0.9)' }}>
+          <h1 className="text-6xl font-bold text-white " style={{ textShadow: '5px 5px 10px rgba(0, 0, 0, 0.9)' }}>
           
             Deskify
           </h1>

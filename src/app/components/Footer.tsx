@@ -29,12 +29,12 @@ const Footer = () => {
 
   return (
     <footer
-      className={`relative bg-[#2D2E32] text-white py-12 mt-32 transition-opacity duration-500 ease-in-out ${
-        isVisible ? 'footer-visible animate-fadeInUp' : ''
-      }`}
+      className="relative bg-gradient-to-r from-black via-black to-[#1D1915] text-white py-12 transition-opacity duration-500 ease-in-out"
+      
+      
     >
       {/* Top Border Animation */}
-      <div className="top-border absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 to-teal-600"></div>
+      <div className="top-border absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#1D1915] to-black"></div>
 
       {/* Footer Content */}
       <div className="container mx-auto text-center">

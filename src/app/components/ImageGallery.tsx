@@ -30,7 +30,17 @@ const images: GalleryImage[] = [
 // ImageGallery component jo static collage style mein images render karega
 const ImageGallery: React.FC = () => {
   return (
-    <div className="collage-grid mt-[50px]">
+    <div className="hero text-left bg-black text-white relative py-32 px-32">
+    <img
+      src="images/bb.jpg"
+      className="w-full absolute top-0 left-0 object-cover opacity-30"
+    />
+       <div className="relative z-10 text-gray-300 text-center flex justify-center">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase mb-4 w-[370px] h-[87px] justify-center flex items-center bg-transparent border-4 text-white border-black" style={{ boxShadow: "10px 10px 20px #C1AA90" }}>
+            Deskify Gallery
+          </h2>
+        </div>
+    <div className="collage-grid mt-16 gap-2" style={{ boxShadow: "-20px -20px 28px #C1AA90, 20px 20px 28px #C1AA90" }}>
       {images.map((image, index) => (
         <div
           key={index}
@@ -46,6 +56,8 @@ const ImageGallery: React.FC = () => {
         </div>
       ))}
     </div>
+    </div>
+
   );
 };
 

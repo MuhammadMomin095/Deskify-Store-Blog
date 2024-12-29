@@ -1,7 +1,6 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Comments from './components/Comments';
 import Cart from './components/Cart';
@@ -43,7 +42,7 @@ const HomePage = () => {
   return (
 
     <div>
-      <Navbar />
+      
       <Hero />
       <About />
       <ImageGallery />
