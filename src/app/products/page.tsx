@@ -59,7 +59,7 @@ const ProductsPage = () => {
           {products.map((product) => (
             <motion.div
               key={product.id}
-              className="motion-item bg-white hover:scale-105 shadow-lg rounded-lg p-6 flex flex-col items-center transition-transform duration-300 ease-in-out w-full"style={{ boxShadow: "-20px -20px 28px #1D1915, 20px 20px 28px #C1AA90" }}
+              className="motion-item hover:scale-105 shadow-lg rounded-lg p-6 flex flex-col items-center transition-transform duration-300 ease-in-out w-full bg-gradient-to-r from-black via-[#1D1915] to-black"style={{ boxShadow: "-20px -20px 28px #1D1915, 20px 20px 28px #C1AA90" }}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -69,12 +69,12 @@ const ProductsPage = () => {
                 alt={product.name}
                 className="w-full h-48 object-cover rounded-lg mb-4"
               />
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">{product.name}</h2>
-              <p className="text-sm text-gray-600 mb-4">{product.description}</p>
-              <p className="text-lg font-semibold text-gray-900 mb-4">{product.price}</p>
+              <h2 className="text-xl font-semibold text-gray-100 mb-4">{product.name}</h2>
+              <p className="text-sm text-gray-200 mb-4">{product.description}</p>
+              <p className="text-lg font-semibold text-gray-300 mb-4">{product.price}</p>
               <Link
                 href={`/products/${product.id}`} // Correct template literal syntax for dynamic URL
-                className="px-6 py-3 text-white bg-blue-500 rounded-lg transform transition-all hover:bg-blue-700"
+                className="px-6 py-3 text-white bg-[#1D1915] rounded-full transform transition-all"  style={{ boxShadow: " 4px 4px 10px #C1AA90" }}
               >
                 View Details
               </Link>

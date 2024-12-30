@@ -95,30 +95,30 @@ const Cart = () => {
         </div>
 
         <AnimatePresence>
-  <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-40 mt-12'>
+  <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-24 mt-12'>
     {cartItems.map((item) => (
-      <li key={item.id} className="grid border-b pb-4  h-[650px] border-2 border-[#1D1915] rounded-lg  bg-gradient-to-r from-[#1D1915] via-[#9c8973] to-[#1D1915]" style={{ boxShadow: "-20px -20px 28px #1D1915, 20px 20px 28px #C1AA90" }}>
+      <li key={item.id} className="grid border-b pb-4 w-[350px]  h-[650px] border-2 border-[#1D1915] rounded-lg  bg-gradient-to-r from-black via-[#1D1915] to-black" style={{ boxShadow: "-20px -20px 28px #1D1915, 20px 20px 28px #C1AA90" }}>
         {/* Left Section: Image and Details */}
         <div className=" space-x-4 w-full">
           <img src={item.image} alt={item.name} className="w-full px-4 py-5 h-380 object-cover rounded-lg" />
           </div>
           <div>
             <span className="text-xl font-medium text-gray-200">{item.name}</span>
-            <p className="text-lg font-semibold text-slate-950">${item.price}</p>
+            <p className="text-lg font-semibold text-slate-400">${item.price}</p>
           </div>
         
 
         {/* Center Section: Quantity Controls */}
         <div className="space-x-4">
           <button
-            className="px-2 py-1 bg-gray-900 rounded hover:bg-gray-950"
+            className="px-2 py-1 bg-gray-700 rounded hover:bg-gray-950"
             onClick={() => handleQuantityChange(item.id, 'decrease')}
           >
             -
           </button>
           <span className="text-lg">{item.quantity}</span>
           <button
-            className="px-2 py-1 bg-gray-900 rounded hover:bg-gray-950"
+            className="px-2 py-1 bg-gray-700 rounded hover:bg-gray-950"
             onClick={() => handleQuantityChange(item.id, 'increase')}
           >
             +

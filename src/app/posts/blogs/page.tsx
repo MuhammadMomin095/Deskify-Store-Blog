@@ -56,11 +56,11 @@ export default async function Blogs () {
 
 
 
-    <div className="flex flex-wrap justify-center items-center mt-28  gap-8  z-10">
+    <div className="flex flex-wrap justify-center mt-28  gap-8 px-10  z-10">
           {data.map((blog: any, index: number) => (
               <div
                 key={index}
-                className="flex flex-col justify-start items-center gap-2 w-[300px] bg-gradient-to-r from-[#1D1915] via-[#3A3126] to-[#1D1915]  h-[750px] border-black border-2  z-10"style={{ boxShadow: "-20px -20px 28px #C1AA90, 20px 20px 28px #C1AA90" }}
+                className="flex flex-col justify-start items-center gap-2 w-[370px] bg-gradient-to-r from-[#1D1915] via-[#3A3126] to-[#1D1915]  h-[750px] border-black border-2  z-10"style={{ boxShadow: "-20px -20px 28px #C1AA90, 20px 20px 28px #C1AA90" }}
               >
                 {blog.image?.asset && (
                   <div className="w-full aspect-square overflow-hidden">
@@ -74,7 +74,7 @@ export default async function Blogs () {
                <p className="text-xl mt-14 pl-3 pr-3 font-bold  text-white">
                   {blog.heading}
                 </p>
-                <p className="text-xl pl-3 pr-3 font-medium  text-white">
+                <p className="text-xl pl-3 pr-3text-white">
                   {blog.para}
                 </p>
 
