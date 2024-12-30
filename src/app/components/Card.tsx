@@ -5,12 +5,12 @@ const Card = () => {
   return (
     <div className="hero text-left bg-black text-white relative py-32 px-40">
     <img
-      src="images/5.jpg"
+      src="bg/3.jpg"
       className="w-full absolute top-0 left-0 object-cover opacity-30"
     />
     <section className="relative z-10 text-gray-300 text-center ">
        {/* Section Heading */}
-       <div className="flex justify-center">
+       <div className="flex justify-center z-10">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase mb-4 w-[350px] h-[87px] justify-center flex items-center bg-transparent border-4 text-white border-black" style={{ boxShadow: "10px 10px 20px #C1AA90" }}>
             Cards
           </h2>

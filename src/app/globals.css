@@ -2,13 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 /* Global Styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #F9FAFB;
-  color: #333;
-  position: absolute;
-}
+
 
 
 /* Responsive Styles */

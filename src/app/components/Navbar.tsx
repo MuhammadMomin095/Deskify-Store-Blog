@@ -12,18 +12,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full bg-gradient-to-r from-[#695441] via-[#C1AA90] to-[#695441] absolute px-4 z-50 top-0 left-0 right-0 ">
+    <nav className="w-full  absolute px-4 z-50 top-0 left-0 right-0 ">
       <div className="container mx-auto flex justify-between items-center">
         {/* Left Section: Logo and Name */}
         <div className="flex items-center space-x-10">
-          <div className="w-20 h-20 overflow-hidden rounded-full border-2 border-white shadow-lg transition-transform duration-500 ease-in-out hover:scale-110">
-            <img
-              src="/images/1.jpg"
-              alt="Craftiverse Logo"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <h1 className="text-6xl font-bold text-white " style={{ textShadow: '5px 5px 10px rgba(0, 0, 0, 0.9)' }}>
+        
+          <h1 className="text-3xl mt-8 px-6 font-bold text-white " style={{ textShadow: " 4px 4px 10px white" }} >
           
             Deskify
           </h1>
@@ -42,11 +36,11 @@ const Navbar = () => {
         </div>
 
         {/* Right Section: Navbar Links */}
-        <ul className={`lg:flex space-x-8 text-white ${menuOpen ? 'flex' : 'hidden'} lg:block`}>
+        <ul className={`lg:flex space-x-8 mt-8 px-6 text-white ${menuOpen ? 'flex' : 'hidden'} lg:block`}>
           <li>
             <Link
               href="/"
-              className="text-lg font-semibold hover:text-yellow-300 transition duration-300 ease-in-out"
+              className="  hover:text-yellow-300 transition duration-300 ease-in-out"
             >
               Home
             </Link>
@@ -54,7 +48,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/about"
-              className="text-lg font-semibold hover:text-yellow-300 transition duration-300 ease-in-out"
+              className="hover:text-yellow-300 transition duration-300 ease-in-out"
             >
               About
             </Link>
@@ -62,7 +56,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/cart"
-              className="text-lg font-semibold hover:text-yellow-300 transition duration-300 ease-in-out"
+              className="hover:text-yellow-300 transition duration-300 ease-in-out"
             >
               Cart
             </Link>
@@ -70,7 +64,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/products"
-              className="text-lg font-semibold hover:text-yellow-300 transition duration-300 ease-in-out"
+              className="hover:text-yellow-300 transition duration-300 ease-in-out"
             >
               Products
             </Link>
@@ -78,7 +72,7 @@ const Navbar = () => {
           <li>
             <Link
               href="/posts/blogs"
-              className="text-lg font-semibold hover:text-yellow-300 transition duration-300 ease-in-out"
+              className="hover:text-yellow-300 transition duration-300 ease-in-out"
             >
               Blogs
             </Link>

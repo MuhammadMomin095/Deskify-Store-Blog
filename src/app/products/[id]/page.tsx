@@ -38,9 +38,18 @@ const ProductDetailsPage = () => {
   }, [productId]);
 
   return (
-    <div>
+    <div className="text-left bg-black text-white relative">
+      {/* Navbar */}
       <Navbar />
-      <div className="products max-w-full mt-56 mx-auto p-6 bg-white shadow-lg rounded-lg">
+
+     {/* Background Image */}
+    <img
+      src="/images/aa.jpg"
+      className="w-full absolute top-0 left-0 object-cover opacity-20 z-0"  
+    />
+
+    <section className="relative z-10 text-gray-300 text-center py-48 px-28">
+      
         {product && (
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
@@ -51,16 +60,16 @@ const ProductDetailsPage = () => {
             <img
               src={product.image}
               alt={product.name}
-              className="w-4/5 rounded-full h-80 transform transition duration-500 hover:scale-105 hover:rotate-2 hover:shadow-2xl"
+              className="w-4/5 rounded-full h-80 transform transition duration-500 hover:scale-105 hover:rotate-2 hover:shadow-2xl"style={{ boxShadow: "20px 20px 32px #C1AA90" }}
             />
             <div>
-              <h1 className="text-3xl font-bold mb-4">{product.name}</h1>
-              <p className="text-lg text-gray-600 mb-6">{product.description}</p>
-              <p className="text-2xl font-semibold text-gray-900 mb-6">{product.price}</p>
+              <h1 className="text-3xl text-white font-bold mb-4">{product.name}</h1>
+              <p className="text-lg text-gray-200 mb-6">{product.description}</p>
+              <p className="text-2xl font-semibold text-gray-300 mb-6">{product.price}</p>
               <div className="text-center">
                 <Link
                   href="/products"
-                  className="px-6 py-3 text-white bg-blue-500 rounded-lg shadow-md transform transition-all hover:bg-blue-700 hover:scale-105"
+                  className="px-6 py-3 text-white bg-black rounded-full shadow-md transform transition-all hover:bg-gray-950 hover:scale-105" style={{ boxShadow: " 4px 4px 10px white" }} 
                 >
                   Back to Products
                 </Link>
@@ -68,7 +77,7 @@ const ProductDetailsPage = () => {
             </div>
           </motion.div>
         )}
-      </div>
+      </section>
       <Footer />
     </div>
   );

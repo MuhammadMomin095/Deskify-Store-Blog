@@ -64,59 +64,105 @@ const Cart = () => {
 
   return (
     <div>
+    <div className="text-left bg-black text-white relative">
+      {/* Navbar */}
       <Navbar />
-      <motion.div
-        className="cart-container px-4 py-8"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <h2 className="text-3xl font-bold mb-6" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)' }}
->Your Cart</h2>
+
+     {/* Background Image */}
+    <img
+      src="bg/10.jpg"
+      className="w-full  absolute top-0 left-0 object-cover opacity-30 z-0"  
+    />
+     <img
+      src="bg/3.jpg"
+      className="w-full  absolute bottom-20 left-0 object-cover opacity-30 z-0"  
+    />
+ 
+    
+    
+    
+    {/* Container for Logo and Menu */}
+  
+
+
+      
+    <section className="relative z-10 text-gray-300 text-center py-16">
+       {/* Section Heading */}
+       <div className="flex justify-center z-10 mt-32">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase mb-4 w-[350px] h-[87px] justify-center flex items-center bg-transparent border-4 text-white border-black " style={{ boxShadow: "10px 10px 20px #C1AA90" }}>
+          Your Cart
+          </h2>
+        </div>
 
         <AnimatePresence>
-          {cartItems.map((item) => (
-            <motion.li key={item.id} className="flex justify-between items-center border-b pb-4">
-              <div className="flex items-center space-x-4">
-                <img src={item.image} alt={item.name} className="w-20 h-20 object-cover rounded-lg" />
-                <div>
-                  <span className="text-xl font-medium text-gray-800">{item.name}</span>
-                  <p className="text-lg font-semibold text-green-500">${item.price}</p>
-                </div>
-              </div>
+  <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-40 mt-12'>
+    {cartItems.map((item) => (
+      <li key={item.id} className="grid border-b pb-4  h-[650px] border-2 border-[#1D1915] rounded-lg  bg-gradient-to-r from-[#1D1915] via-[#9c8973] to-[#1D1915]" style={{ boxShadow: "-20px -20px 28px #1D1915, 20px 20px 28px #C1AA90" }}>
+        {/* Left Section: Image and Details */}
+        <div className=" space-x-4 w-full">
+          <img src={item.image} alt={item.name} className="w-full px-4 py-5 h-380 object-cover rounded-lg" />
+          </div>
+          <div>
+            <span className="text-xl font-medium text-gray-200">{item.name}</span>
+            <p className="text-lg font-semibold text-slate-950">${item.price}</p>
+          </div>
+        
 
-              <div className="flex items-center space-x-4">
-                <button className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" onClick={() => handleQuantityChange(item.id, 'decrease')}>-</button>
-                <span className="text-lg">{item.quantity}</span>
-                <button className="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" onClick={() => handleQuantityChange(item.id, 'increase')}>+</button>
-              </div>
+        {/* Center Section: Quantity Controls */}
+        <div className="space-x-4">
+          <button
+            className="px-2 py-1 bg-gray-900 rounded hover:bg-gray-950"
+            onClick={() => handleQuantityChange(item.id, 'decrease')}
+          >
+            -
+          </button>
+          <span className="text-lg">{item.quantity}</span>
+          <button
+            className="px-2 py-1 bg-gray-900 rounded hover:bg-gray-950"
+            onClick={() => handleQuantityChange(item.id, 'increase')}
+          >
+            +
+          </button>
+        </div>
 
-              <div className="text-lg font-semibold">${(item.price * item.quantity).toFixed(2)}</div>
+        {/* Right Section: Total Price */}
+        <div className="text-lg font-semibold">
+          ${(item.price * item.quantity).toFixed(2)}
+        </div>
 
-              <button className="text-red-600 hover:text-red-800" onClick={() => removeItem(item.id)}>Remove</button>
-            </motion.li>
-          ))}
-        </AnimatePresence>
+        {/* Remove Button */}
+        <button
+          className="text-red-600 hover:text-red-800"
+          onClick={() => removeItem(item.id)}
+        >
+          Remove
+        </button>
+      </li>
+    ))}
+  </div>
+</AnimatePresence>
 
-        <div className="mt-8 text-right">
+
+        <div className="mt-16 ">
           <h3 className="text-2xl font-bold">Total: ${totalPrice.toFixed(2)}</h3>
         </div>
 
         {/* Checkout Button */}
-        <div className="text-center mt-6">
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+        <div className="text-center mt-20">
+          <div>
             <Link href={{
               pathname: "/checkout",
               query: { cartItems: JSON.stringify(cartItems), totalPrice: totalPrice.toFixed(2) }
-            }} className="px-6 py-3 bg-blue-600 text-white rounded-lg shadow-md transform transition-all hover:bg-blue-700 hover:scale-105">
+            }} className="px-6 py-3 bg-black rounded-full text-white shadow-md transform transition-all hover:bg-gray-950 hover:scale-105"  style={{ boxShadow: " 4px 4px 10px white" }}>
               Proceed to Checkout
             </Link>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
-      <Footer />
+      </section>
+      
     </div>
+    <Footer />
+   </div>
   );
 };
 

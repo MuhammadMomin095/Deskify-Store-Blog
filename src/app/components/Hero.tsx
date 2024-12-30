@@ -73,10 +73,10 @@ const HeroSection: React.FC<NavbarProps> = ({ menuOpen, toggleMenu }) => {
   
       {/* Navigation Links */}
       <nav>
-        <ul className={`lg:flex mt-6 space-x-8 text-white ${menuOpen ? 'flex' : 'hidden'} flex-col lg:flex-row`}>
+        <ul className={`lg:flex mt-6 space-x-8  text-white ${menuOpen ? 'flex' : 'hidden'} flex-col lg:flex-row`}>
           {navItems.map((item) => (
             <li key={item.path}>
-              <Link href={item.path} className="nav-link">
+              <Link href={item.path} className="nav-link hover:text-yellow-300">
                 {item.name}
               </Link>
             </li>
