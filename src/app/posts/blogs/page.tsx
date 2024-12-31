@@ -27,7 +27,7 @@ export default async function Blogs() {
       {/* Main Section */}
       <section className="relative z-10 text-gray-300 text-center py-16 sm:py-24 md:py-32 lg:py-48">
         {/* Section Heading */}
-        <div className="flex justify-center z-10">
+        <div className="flex justify-center z-10 mt-16 md:mt-20">
           <h2
             className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase mb-6 w-full max-w-[350px] h-[87px] flex items-center justify-center bg-transparent border-4 text-white border-black"
             style={{ boxShadow: "10px 10px 20px #C1AA90" }}
