@@ -30,7 +30,7 @@ const images: GalleryImage[] = [
 // ImageGallery component jo static collage style mein images render karega
 const ImageGallery: React.FC = () => {
   return (
-    <div className="hero text-left bg-black text-white relative py-32 px-32">
+    <div className="hero text-left bg-black text-white relative py-32 px-2 md:px-20 lg:px-32">
     <img
       src="images/bb.jpg"
       className="w-full absolute top-0 left-0 object-cover opacity-30"

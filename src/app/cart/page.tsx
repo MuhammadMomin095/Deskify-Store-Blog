@@ -61,108 +61,103 @@ const Cart = () => {
     setCartItems(updatedItems);
     calculateTotal(updatedItems);
   };
-
   return (
-    <div>
     <div className="text-left bg-black text-white relative">
       {/* Navbar */}
       <Navbar />
 
-     {/* Background Image */}
-    <img
-      src="bg/10.jpg"
-      className="w-full  absolute top-0 left-0 object-cover opacity-30 z-0"  
-    />
-     <img
-      src="bg/3.jpg"
-      className="w-full  absolute bottom-20 left-0 object-cover opacity-30 z-0"  
-    />
- 
-    
-    
-    
-    {/* Container for Logo and Menu */}
-  
+      {/* Background Images */}
+      <img
+        src="bg/10.jpg"
+        className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] absolute top-0 left-0 object-cover opacity-30 z-0"
+        alt="Background"
+      />
+      <img
+        src="bg/3.jpg"
+        className="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] absolute bottom-20 left-0 object-cover opacity-30 z-0"
+        alt="Background"
+      />
 
-
-      
-    <section className="relative z-10 text-gray-300 text-center py-16">
-       {/* Section Heading */}
-       <div className="flex justify-center z-10 mt-32">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase mb-4 w-[350px] h-[87px] justify-center flex items-center bg-transparent border-4 text-white border-black " style={{ boxShadow: "10px 10px 20px #C1AA90" }}>
-          Your Cart
+      {/* Cart Section */}
+      <section className="relative z-10 text-gray-300 text-center px-4 sm:px-10 md:px-16 lg:px-24 py-16">
+        {/* Section Heading */}
+        <div className="flex justify-center z-10 mt-20 sm:mt-32">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase mb-4 w-full max-w-[350px] h-[87px] flex items-center justify-center bg-transparent border-4 text-white border-black" style={{ boxShadow: '10px 10px 20px #C1AA90' }}>
+            Your Cart
           </h2>
         </div>
 
+        {/* Cart Items */}
         <AnimatePresence>
-  <div className='grid grid-cols-1 md:grid-cols-3 gap-8 px-24 mt-12'>
-    {cartItems.map((item) => (
-      <li key={item.id} className="grid border-b pb-4 w-[350px]  h-[650px] border-2 border-[#1D1915] rounded-lg  bg-gradient-to-r from-black via-[#1D1915] to-black" style={{ boxShadow: "-20px -20px 28px #1D1915, 20px 20px 28px #C1AA90" }}>
-        {/* Left Section: Image and Details */}
-        <div className=" space-x-4 w-full">
-          <img src={item.image} alt={item.name} className="w-full px-4 py-5 h-380 object-cover rounded-lg" />
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4 sm:px-8 md:px-12 lg:px-24 mt-12">
+            {cartItems.map((item) => (
+              <li key={item.id} className="grid border-b pb-4 w-full max-w-[350px] h-auto border-2 border-[#1D1915] rounded-lg bg-gradient-to-r from-black via-[#1D1915] to-black" style={{ boxShadow: '-20px -20px 28px #1D1915, 20px 20px 28px #C1AA90' }}>
+                {/* Image */}
+                <img src={item.image} alt={item.name} className="w-full px-3 py-3 h-[200px] sm:h-[250px] object-cover rounded-lg" />
+                
+                {/* Details */}
+                <div className="px-4 py-2">
+                  <span className="text-lg font-medium text-gray-200">{item.name}</span>
+                  <p className="text-md font-semibold text-slate-400">${item.price}</p>
+                </div>
+
+                {/* Quantity Controls */}
+                <div className="flex justify-between items-center md:px-16 px-6 lg:px-20">
+                  <button
+                    className="px-2 py-1 bg-gray-700 rounded hover:bg-gray-950"
+                    onClick={() => handleQuantityChange(item.id, 'decrease')}
+                  >
+                    -
+                  </button>
+                  <span className="text-lg">{item.quantity}</span>
+                  <button
+                    className="px-2 py-1 bg-gray-700 rounded hover:bg-gray-950"
+                    onClick={() => handleQuantityChange(item.id, 'increase')}
+                  >
+                    +
+                  </button>
+                </div>
+
+                {/* Total and Remove Button */}
+                <div className="px-4 py-2">
+                  <div className="text-lg font-semibold text-gray-200">
+                    ${(item.price * item.quantity).toFixed(2)}
+                  </div>
+                  <button
+                    className="text-red-600 hover:text-red-800"
+                    onClick={() => removeItem(item.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </li>
+            ))}
           </div>
-          <div>
-            <span className="text-xl font-medium text-gray-200">{item.name}</span>
-            <p className="text-lg font-semibold text-slate-400">${item.price}</p>
-          </div>
-        
+        </AnimatePresence>
 
-        {/* Center Section: Quantity Controls */}
-        <div className="space-x-4">
-          <button
-            className="px-2 py-1 bg-gray-700 rounded hover:bg-gray-950"
-            onClick={() => handleQuantityChange(item.id, 'decrease')}
-          >
-            -
-          </button>
-          <span className="text-lg">{item.quantity}</span>
-          <button
-            className="px-2 py-1 bg-gray-700 rounded hover:bg-gray-950"
-            onClick={() => handleQuantityChange(item.id, 'increase')}
-          >
-            +
-          </button>
-        </div>
-
-        {/* Right Section: Total Price */}
-        <div className="text-lg font-semibold">
-          ${(item.price * item.quantity).toFixed(2)}
-        </div>
-
-        {/* Remove Button */}
-        <button
-          className="text-red-600 hover:text-red-800"
-          onClick={() => removeItem(item.id)}
-        >
-          Remove
-        </button>
-      </li>
-    ))}
-  </div>
-</AnimatePresence>
-
-
-        <div className="mt-16 ">
+        {/* Total Price */}
+        <div className="mt-12">
           <h3 className="text-2xl font-bold">Total: ${totalPrice.toFixed(2)}</h3>
         </div>
 
         {/* Checkout Button */}
-        <div className="text-center mt-20">
-          <div>
-            <Link href={{
-              pathname: "/checkout",
-              query: { cartItems: JSON.stringify(cartItems), totalPrice: totalPrice.toFixed(2) }
-            }} className="px-6 py-3 bg-black rounded-full text-white shadow-md transform transition-all hover:bg-gray-950 hover:scale-105"  style={{ boxShadow: " 4px 4px 10px white" }}>
-              Proceed to Checkout
-            </Link>
-          </div>
+        <div className="text-center mt-8">
+          <Link
+            href={{
+              pathname: '/checkout',
+              query: { cartItems: JSON.stringify(cartItems), totalPrice: totalPrice.toFixed(2) },
+            }}
+            className="px-6 py-3 bg-black rounded-full text-white shadow-md transform transition-all hover:bg-gray-950 hover:scale-105"
+            style={{ boxShadow: '4px 4px 10px white' }}
+          >
+            Proceed to Checkout
+          </Link>
         </div>
       </section>
-      
+
+      {/* Footer */}
+      <Footer />
     </div>
-    <Footer />
-   </div>
   );
 };
 
